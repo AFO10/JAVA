@@ -1,3 +1,5 @@
+# Tipos de Excepciones
+
 Cuando el programa detecta un error, este detiene su ejecución.
 
 Al momento de que se usa "Try", el programa entiende que puede haber un error, y por tanto lo atrapa con "Catch", finalmente el programa continua su ejecución.
@@ -62,5 +64,4 @@ try{
 /*El programa continúa.*/
 ```
 
-# Tipos de Excepciones
 
