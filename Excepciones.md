@@ -33,7 +33,7 @@ try{
 
 } catch (ArithmeticException exception){
 
-  exception.printStackTrace();  // Indica el estado de la pila de flujo en que fue encontrado el error
+  exception.printStackTrace();  // Indica el estado de la pila de ejecución en que fue encontrado el error
 
 
   /* Si el catch anterior no captura el error. Es posible agregar otro catch.
