@@ -1,3 +1,6 @@
+Memoria HEAP:  Es la memoria en la cual se guardan todos los objetos que creamos en nuestro programa.
+
+
 # Tipos de Excepciones
 
 Cuando el programa detecta un error, este detiene su ejecución.
@@ -47,7 +50,7 @@ try{
 /*El programa continúa.*/
 ```
 
-Otro caso;
+Otro caso:
 
 ```
 try{
@@ -64,4 +67,38 @@ try{
 /*El programa continúa.*/
 ```
 
+## Lanzando Excepciones
 
+Si queremos lanzar errores. Es necesario lo siguiente:
+
+```
+
+	public static void metodo2() {
+		System.out.println("Inicio de metodo2");
+
+/* No será suficiente con crear el objeto ae.
+* Sino, es necesario usar la palabra reservada "throw" para lanzar este error.
+*/
+		ArithmeticException ae = new ArithmeticException(); // Se crea el objeto Excepción
+    throw ae;                                           // Se lanza la excepción
+/* throw no permite que haya más código debajo de la línea en que se encuentra, en el método que se está llamando.
+Pues al lanzar el error, todo lo que venga después no será realizado. Esto se limita al método en que se encuentre.
+*/
+	
+	}
+
+```
+
+
+Otra manera de hacerlo:
+
+	public static void metodo2() {
+		System.out.println("Inicio de metodo2");
+```
+    throw new ArithmeticException();                                           
+
+	}
+
+```
+
+Throw solo permite "lanzar" objetos que son excepciones, no admite otro tipo de objeto.
