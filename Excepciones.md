@@ -92,13 +92,64 @@ Pues al lanzar el error, todo lo que venga después no será realizado. Esto se 
 
 Otra manera de hacerlo:
 
-	public static void metodo2() {
-		System.out.println("Inicio de metodo2");
 ```
-    throw new ArithmeticException();                                           
-
-	}
+public static void metodo2() {
+	System.out.println("Inicio de metodo2");
+	throw new ArithmeticException();                                           
+}
 
 ```
 
 Throw solo permite "lanzar" objetos que son excepciones, no admite otro tipo de objeto.
+
+## Creando Excepciones
+
+Para esto es necesario crear una clase que extienda de "RuntimeException".
+Es necesario definir los constructores con ```super()```
+
+Ejemplo:
+
+```
+public class MiException extends RuntimeException{
+	
+	public MiException() {
+		super();
+	}
+
+	public MiException(String message) {
+		super(message);
+	}
+}
+```
+
+Aplicando lo anterior, entonces la siguiente línea es correcta:
+
+```
+	throw new MiException("Mi excepción fue lanzada.");
+```
+
+Aplicando lo explicado anteriormente:
+```
+public class Main {
+
+	public static void metodoPrueba () {
+		throw new MiException;
+	}
+
+	public static void main (String[] args) {
+
+		try {
+			metodoPrueba();
+		} catch( MiException exception){
+			System.out.println("Excepcion atrapada");
+		}	
+	}
+
+}
+
+```
+		
+
+
+
+
