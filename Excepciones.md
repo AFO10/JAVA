@@ -67,6 +67,16 @@ try{
 /*El programa continúa.*/
 ```
 
+### Métodos que pueden usar las excepciones:
+
+* **printStackTrace()**: este método nos indica la pila de ejecución, ejemplo:
+  ```
+  MiException: Mi excepción fue lanzada.
+	at Flujo.metodo2(Flujo.java:32)
+	at Flujo.metodo1(Flujo.java:19)
+	at Flujo.main(Flujo.java:10)
+  ``` 
+
 ## Lanzando Excepciones
 
 Si queremos lanzar errores. Es necesario lo siguiente:
