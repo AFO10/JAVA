@@ -148,7 +148,13 @@ public class Main {
 }
 
 ```
-		
+
+La salida que nos da:
+
+```
+Excepcion atrapada
+```
+
 
 
 
