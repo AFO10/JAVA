@@ -1,5 +1,6 @@
 Memoria HEAP:  Es la memoria en la cual se guardan todos los objetos que creamos en nuestro programa.
 
+Errores que se lanzan sobre la JVM (Java Virtual Machine).
 
 # Tipos de Excepciones
 
