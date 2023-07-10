@@ -172,7 +172,11 @@ Excepcion atrapada
 
 ## Lanzando Excepciones desde Exception
 
-Otra manera de lanzar excepciones:
+Si creamos excepciones que heredan desde ```RuntimeException``` es porque "puede" lanzar excepciones, pero si heredamos desde ```Exception``` es porque si o si va a lanzar una excepción en específico. También conocidas como ```checked```, son excepciones comprobadas que de manera obligatoria se deben tomar en cuenta, por el contrario cuando son ```unchecked``` son excepciones que no son obligatorias de tomar en cuenta, es a consideración del programador. 
+
+Las excepciones comprobadas (heredadas de Exception) son utilizadas para indicar situaciones excepcionales que pueden ocurrir y deben ser manejadas de manera explícita en el código, mientras que las excepciones no comprobadas (heredadas de RuntimeException) generalmente indican errores del programador o situaciones inesperadas que no necesitan ser manejadas de forma obligatoria.
+
+Otra manera de lanzar excepciones en el ejemplo a continuación:
 * Sin el método try-catch
   En este caso se hace lo siguiente: 
 ```
@@ -182,3 +186,12 @@ public static void metodoPrueba throws MiException () {
 ```
 Sin embargo, para que esto funcione, también debe colocarse el ```throws``` en los métodos que implementen  ```metodoPrueba```, y a su vez a los que implementen a este.
 
+## Unchecked y Checked
+
+### Unchecked
+
+Las excepciones que heredan de la clase RuntimeException (y sus subclases) son excepciones no comprobadas. No se requiere que se declaren en la firma del método ni se capturan explícitamente en un bloque try-catch. El manejo de estas excepciones es opcional y el programador puede decidir si quiere o no manejarlas.
+
+### Checked
+
+Las excepciones que heredan de la clase Exception (pero no de RuntimeException) se consideran excepciones comprobadas. Esto significa que el compilador obliga a que se manejen o se declaren en la firma del método donde pueden ocurrir. Esto se logra mediante el uso de la palabra clave throws en la declaración del método o mediante el uso de un bloque try-catch para capturar y manejar la excepción.
