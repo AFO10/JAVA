@@ -2,6 +2,10 @@ Memoria HEAP:  Es la memoria en la cual se guardan todos los objetos que creamos
 
 Errores que se lanzan sobre la JVM (Java Virtual Machine).
 
+La interface Throwable implementa a Exception y Error:
+Por lo que no se puede crear una excepción que herede directamente de Throwable.
+
+
 # Tipos de Excepciones
 
 Cuando el programa detecta un error, este detiene su ejecución.
@@ -166,7 +170,15 @@ La salida que nos da:
 Excepcion atrapada
 ```
 
+## Lanzando Excepciones desde Exception
 
-
-
+Otra manera de lanzar excepciones:
+* Sin el método try-catch
+  En este caso se hace lo siguiente: 
+```
+public static void metodoPrueba throws MiException () {
+	throw new MiException;
+}
+```
+Sin embargo, para que esto funcione, también debe colocarse el ```throws``` en los métodos que implementen  ```metodoPrueba```, y a su vez a los que implementen a este.
 
