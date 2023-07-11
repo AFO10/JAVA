@@ -83,4 +83,36 @@ Lista completa de los tags en javadoc:
 
 ## Archivos JAR
 
+Son parecidos a los ```.zip```, contienen el código ya compilado de nuestro código.
+Hace referencia a "Java Archive".
+Es el formato estándar en el mundo de Java para distribuir código compilado.
+
+Como generarlo: 
+
+1. Damos anticlick en el nombre de nuestro proyecto en ```Project Explorer```.
+2. Seleccionar ```Exportar```
+3. Buscamos la opción JAR
+   
+![image](https://github.com/AFO10/JAVA/assets/89848233/83148fba-fcea-4773-b2e2-43a8f0fccb8b)
+
+## Usando bibliotecas con JAR
+
+Cuando queremos compartir nuestro código compilado, pero sin que tengan acceso a editar nuestro código, una buena opción es el uso de archivos ```JAR```.
+Como ya hemos realizado anteriormente la exportación de nuestro código, lo que sigue a continuación es añadirlo a un nuevo proyecto de manera que podamos darle uso.
+Para esto, seguiremos una convención en donde creamos una carpeta ```lib``` (dentro de ```src```)donde añadiremos a nuestro archivo ```jar```.
+Sin embargo, esto no será suficiente, en el caso del IDE Eclipse, lo que debemos realizar a continuación es añadir el archivo ```jar``` a las librerías que utiliza Eclipse para ejecutar nuestro código.
+Para esto, hacemos lo siguiente:
+
+1. Anticlick en el archivo ```jar```.
+2. Seleccionar ```Build path```.
+3. Añadir
+
+Una vez realizado esto, podremos usar libremente las clases y métodos que están comprimidos en el archivo ```jar```
+
+
+## JAR Ejecutables
+
+Para crear archivos ```jar``` ejecutables debemos realizar pasos similares a lo que se hizo en Archivo JAR.
+Lo que va a variar es que seleccionaremos una ```Main Class```, que será la clase que se ejecute al momento de abrir el archivo.
+
 
