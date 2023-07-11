@@ -195,3 +195,89 @@ Las excepciones que heredan de la clase RuntimeException (y sus subclases) son e
 ### Checked
 
 Las excepciones que heredan de la clase Exception (pero no de RuntimeException) se consideran excepciones comprobadas. Esto significa que el compilador obliga a que se manejen o se declaren en la firma del método donde pueden ocurrir. Esto se logra mediante el uso de la palabra clave throws en la declaración del método o mediante el uso de un bloque try-catch para capturar y manejar la excepción.
+
+## Finally
+
+Cuando trabajamos con conexiones a bases de datos, casi siempre se implementar dos métodos, uno para leer los datos, y otro para cerrar la conexión. Sin embargo, si surge algún problema durante el momento de lectura de datos, es importante cortar la conexión. Pero que sucede cuando ocurre una excepción antes y nos impide el uso del método de cierre? Para este y otros casos más se utiliza la palabra reservada ```finally```.
+
+```finally``` nos permite realizar una acción independientemente de si se ha atradapo o no error con ```catch```, aquí un ejemplo de su implementación:
+
+```
+try {
+	con.leerDatos();
+} catch(Exception e) {
+	e.printStackTrace();
+} finally { 
+	con.cerrar();	
+}
+```
+
+Usamos ```finally``` también para evitar la redundancia de código, el código anterior sin la aplicación de ```finally``` es:
+
+```
+try {
+	con.leerDatos();
+	}
+catch(IllegalStateException e) {
+	con.cerrar();	
+}
+con.cerrar();
+```
+
+Sin embargo, realizar esto puede no ser una buena práctica debido a que puede generar inseguridad y redundancia.
+
+### Uso de ```finally```
+
+Para tener más clara la relación entre ```try```, ```catch``` y ```finally``` es necesario recordar lo siguiente:
+
+* Un ```try``` no puede funcionar solo, necesita de un ```catch``` o de un ```finally```.
+* Un ```try``` puede funcionar solo con un ```finally```, ejemplo:
+  ```
+  try {
+  	//staments
+  } finally {
+	//staments
+  }
+  ```
+  El código anterior compila correctamente.
+
+* No puede haber más de un ```finally```.
+* Es obligatorio respetar el orden, ejemplo:
+  ```
+  try {
+  	//staments
+  } catch {
+	//staments
+  } finally {
+	//staments
+  }
+  ```
+
+
+## Try with resource 
+
+Si necesitas que el objeto haga algo cuando se cierre, como cerrarlo después, usar la interface ```AutoCloseable``` y usar el ```try with resources```.
+
+Ejemplo:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
