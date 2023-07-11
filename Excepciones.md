@@ -198,9 +198,9 @@ Las excepciones que heredan de la clase Exception (pero no de RuntimeException) 
 
 ## Finally
 
-Cuando trabajamos con conexiones a bases de datos, casi siempre se implementar dos métodos, uno para leer los datos, y otro para cerrar la conexión. Sin embargo, si surge algún problema durante el momento de lectura de datos, es importante cortar la conexión. Pero que sucede cuando ocurre una excepción antes y nos impide el uso del método de cierre? Para este y otros casos más se utiliza la palabra reservada ```finally```.
+Cuando trabajamos con conexiones a bases de datos, casi siempre se implementan dos métodos, uno para leer los datos, y otro para cerrar la conexión. Sin embargo, si surge algún problema durante el momento de lectura de datos, es importante cortar la conexión. Pero que sucede cuando ocurre una excepción antes y nos impide el uso del método de cierre? Para este y otros casos más se utiliza la palabra reservada ```finally```.
 
-```finally``` nos permite realizar una acción independientemente de si se ha atradapo o no error con ```catch```, aquí un ejemplo de su implementación:
+```finally``` nos permite realizar una acción independientemente de si se ha atrapado o no el error con ```catch```, aquí un ejemplo de su implementación:
 
 ```
 try {
@@ -260,12 +260,60 @@ Si necesitas que el objeto haga algo cuando se cierre, como cerrarlo después, u
 
 Ejemplo:
 
+```
+try (Conexion con = new Conexion()){
+	con.leerDatos();
+} catch(IllegalStateException ex) {
+	ex.printStackTrace();
+}
+```
 
+Lo mostrado anteriormente es la aplicación, sin embargo se deben tomar en cuenta lo siguiente:
 
+* Debe colocarse ```throws``` en todos los métodos que implementen.
+  ```public static void main(String[] args)throws Exception```
+  
+* La clase que genera la excepción debe implementar de la interfaz ```AutoCloseable```:
+  ```
+  public class Conexion implements AutoCloseable{
 
+  	public Conexion() {
+  		System.out.println("Abriendo conexion");
+   	}
 
+   	public void leerDatos() {
+       		System.out.println("Recibiendo datos");
+       		throw new IllegalStateException();
+   	}
 
+   	public void cerrar() {
+       		System.out.println("Cerrando conexion");
+   	}
 
+  	@Override
+	public void close() throws Exception {
+		this.cerrar();	
+	}
+  }
+  ```
+  En el método ```close``` usa ```throws``` y ahí se colocan las acciones que se quieren realizar cuando lo que estaba entre paréntesis del ```try```.
+
+* El bloque ```finally``` se crea automáticamente de forma implícita
+
+Un ejemplo de lo mostrado anteriormente sin el uso de ```try with resource``` es:
+```
+try {
+	con = new Conexion();
+	con.leerDatos();
+} catch(IllegalStateException e) {
+	e.printStackTrace();
+} finally { 
+	System.out.println("Ejecutando finally");
+	if (con != null) {
+		con.cerrar();	
+	}
+}
+```
 
 
 
