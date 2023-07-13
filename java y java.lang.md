@@ -207,6 +207,8 @@ Datos a tener en cuenta:
   	System.out.println(nombre);
   ```
 
-## Explorando System
+## Explorando ```System```
+
+import javax.swinf.*;
 
 
