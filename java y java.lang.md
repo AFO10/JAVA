@@ -209,6 +209,17 @@ Datos a tener en cuenta:
 
 ## Explorando ```System```
 
-import javax.swinf.*;
+# Clase ```Object```
 
+Es la clase padre de todo, todos extienden de ```Object```. Tanto ```double```, ```int```, ```String```. Absolutamente todo.
+
+Esto sirve en el caso de que queramos instanciar un método que reciba múltiples tipos de parámetro. Ejemplo:
+
+* ```public static void imprimir (int valor)```
+* ```public static void imprimir (double valor)```
+* ```public static void imprimir (Cuenta valor)```
+* ```public static void imprimir (String valor)```
+
+Todo lo anterior, genera mucha redundancia, y puede ser reemplazada por ```Object```
+ ```public static void imprimir (Object valor)```
 
