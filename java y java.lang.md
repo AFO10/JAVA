@@ -195,14 +195,18 @@ Datos a tener en cuenta:
   String texto = builder.toString();
   System.out.println(texto);
   ```
-* CharSequence (interface)
+* CharSequence (interface): String es una CharSequence
   ```
   public class StringBuilder implements CharSequence {
   	CharSequence cs = new StringBuilder("También es una secuencia de caracteres");
   	String nombre = "ALURA";
 
   	CharSequence cs = new StringBuilder("al");
-	nombre = nombre.replace("AL", cs);
+  	nombre = nombre.replace("AL", cs);
 
   	System.out.println(nombre);
   ```
+
+## Explorando System
+
+
