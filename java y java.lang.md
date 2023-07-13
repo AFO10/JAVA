@@ -163,12 +163,12 @@ Datos a tener en cuenta:
   
   - Funciona
     ```
-    		System.out.println(nombre);
-		nombre = nombre.replace('a', 'e');
+    System.out.println(nombre);
+	nombre = nombre.replace('a', 'e');
     ```
   - No funciona
     ```
-    		nombre.replace('a', 'e');
-		System.out.println(nombre);
+    nombre.replace('a', 'e');
+	System.out.println(nombre);
     ```
 
