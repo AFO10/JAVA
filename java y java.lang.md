@@ -172,3 +172,37 @@ Datos a tener en cuenta:
 	System.out.println(nombre);
     ```
 
+## Métodos String
+
+* replace(char lett): reemplaza un caracter
+* concat(String cad): hace una concatenación
+* toUpperCase(void): transforma una cadena de minúsculas a mayúsculas
+* toLowerCase(void): transforma una cadena de mayúsculas a minúsculas.
+* charAt (int index): devuelve el caracter en la posición del index.
+* indexOf (char buscado): devuelve el índice el caracter "buscado". Este método está sobrecargado (acepta diferentes parámetros y hace cosas distintas).
+
+### Relacionado con String:
+
+* StringBuilder (clase común), sirve para concatenar Strings de manera más eficiente.
+  ```
+  StringBuilder builder = new StringBuilder("Ayuda");
+  builder.append("-");
+  builder.append("me ");
+  builder.append("subi ");
+  builder.append("en el ");
+  builder.append("omnibus ");
+  builder.append("equivocado ");
+  String texto = builder.toString();
+  System.out.println(texto);
+  ```
+* CharSequence (interface)
+  ```
+  public class StringBuilder implements CharSequence {
+  	CharSequence cs = new StringBuilder("También es una secuencia de caracteres");
+  	String nombre = "ALURA";
+
+  	CharSequence cs = new StringBuilder("al");
+	nombre = nombre.replace("AL", cs);
+
+  	System.out.println(nombre);
+  ```
