@@ -115,4 +115,60 @@ Una vez realizado esto, podremos usar libremente las clases y métodos que está
 Para crear archivos ```jar``` ejecutables debemos realizar pasos similares a lo que se hizo en Archivo JAR.
 Lo que va a variar es que seleccionaremos una ```Main Class```, que será la clase que se ejecute al momento de abrir el archivo.
 
+# El Paquete ```java.lang```
+
+## Explorando String
+
+Cuando se quiere usar métodos o clases en tu programa, es necesita importar los paquetes necesarios, sin embargo que sucede con los método de ```string``` ?
+
+Esto lo hemos visto en todos lados, ejemplo:
+
+```
+public class TestString {
+	
+	public static void main(String[] args) {
+		
+		String nombre = "Alura";
+		
+	}
+
+}
+
+```
+
+En el caso de ```String```, es un objeto, sin embargo no es necesario usar ```new```. Hay 2 opciones:
+
+1. Se le asigna directamente un literal
+   ```
+   String nombre = "Alura";
+   ```
+2. No es utilizada, pero es válida
+   ```
+   String nombre = new String ("Alura");
+   ```
+
+Si queremos buscar más información de este objeto, podemos buscar el ```javadoc``` de ```String``` en internet.
+Podemos buscar en la Java SE 7 (Java Standar Edition 7), la cual no presenta modificaciones desde la versión 7.
+
+Lo que está en el ```javadoc``` nos indica que la clase u objeto ```String``` es parte del paquete ```java.lang```, que hace referencia a "Java Language".
+
+Lo que hace Java, es que importa el paquete ```java.lang``` de manera implícita.
+
+La clase ```String``` nos da una gran variedad de métodos con la cual podemos realizar diversas tareas según lo requeramos.
+
+Datos a tener en cuenta: 
+
+* Una variable de la clase String es inmutable, no se puede modificar, solo se puede asignar los cambios a otras variables.
+  Ejemplo:
+  
+  - Funciona
+    ```
+    		System.out.println(nombre);
+		nombre = nombre.replace('a', 'e');
+    ```
+  - No funciona
+    ```
+    		nombre.replace('a', 'e');
+		System.out.println(nombre);
+    ```
 
