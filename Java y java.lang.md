@@ -117,6 +117,8 @@ Lo que va a variar es que seleccionaremos una ```Main Class```, que será la cla
 
 # El Paquete ```java.lang```
 
+El paquete java.lang es uno de los paquetes fundamentales en el lenguaje de programación Java. Contiene clases y interfaces que son esenciales para el funcionamiento básico del programa. Algunas de las clases más importantes incluyen Object, que es la clase raíz de todas las clases en Java, y Class, que proporciona información sobre las clases en tiempo de ejecución. Además, el paquete java.lang también proporciona clases para manipular tipos de datos primitivos, realizar operaciones matemáticas, trabajar con excepciones y gestionar la concurrencia.
+
 ## Explorando String
 
 Cuando se quiere usar métodos o clases en tu programa, es necesita importar los paquetes necesarios, sin embargo que sucede con los método de ```string``` ?
