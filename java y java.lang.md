@@ -209,7 +209,7 @@ Datos a tener en cuenta:
 
 ## Explorando ```System```
 
-# Clase ```Object```
+## Clase ```Object```
 
 Es la clase padre de todo, todos extienden de ```Object```. Tanto ```double```, ```int```, ```String```. Absolutamente todo.
 
@@ -221,5 +221,12 @@ Esto sirve en el caso de que queramos instanciar un método que reciba múltiple
 * ```public static void imprimir (String valor)```
 
 Todo lo anterior, genera mucha redundancia, y puede ser reemplazada por ```Object```
+
  ```public static void imprimir (Object valor)```
 
+El código anterior, resumen todas las sentencias anteriores.
+
+## Método ```toString()```
+
+Este método indica la ubicación de memoria en que se encuentra una variable.
+Para poder usarla a conveniencia, basta con sobreescribir ```toString```
