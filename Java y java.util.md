@@ -55,23 +55,69 @@ Luego se crea un arreglo que de Cuentas con tamaño 5. Sin embargo las celdas de
 
 # Guardando Referencias
 
-## Cast Objeto
+## Cast Objeto 1
 
 Se realiza un casteo cuando queremos hacer una "conversión" de tipo de dato. Esto solo es posible si el casteo es compatible. Ejemplo:
 
 ```CuentaCorriente cuenta = (CuentaCorriente) cuentas[1];```
 
 A continuación, algunas cosas a tomar en cuenta antes de realizar un casteo.
+
 * Deben ser entre tipos de datos compatibles entre si. Por ejemplo, en la línea de código anterior, el objeto ```cuentas[1]``` pertenece a un array de tipo ```Cuenta```, sin embargo el valor dentro de ```cuentas[1]``` es de tipo ```CuentaCorriente```, esta declaración fue posible debido a que ```CuentaCorriente``` hereda de ```Cuenta```. Entonces lo que se hizo en la línea de código, fue confirmar que efectivamente ```cuentas[1]``` es de tipo ```CuentaCorriente```, ya que en caso contrario, el programa lo tomaría como un objeto de tipo ```Cuenta```.  
 
+## Cast Objeto 2
+
+Podemos crear un array con valores de diferente tipo, siempre y cuando los valores que esten en el array, extiendan de una clase padre que será el tipo de clase con la que se va a declarar el array. Ejemplo:
+
+```
+Object referencias = new Object[5];
+referencias[0] = "hola mundo";
+
+Cuenta cuenta = new Cuenta;
+referencias[1] = cuenta;
+
+referencias[2] = 2;
+
+...
+```
+
+Esto es posible debido a que ```Object``` es la clase padre de todas las clases, entonces es posible crear un array de este tipo y que sus valores sean se diferentes tipos siempre y cuando hereden de la clase padre ```Object```.
+
+## Cast Explícito
+
+```
+CuentaCorriente cc1 = new CuentaCorriente(22, 33);
+Cuenta Cuenta = (Cuenta) cc1; //cast explícito mas desnecessário
+```
 
 
+## Cast Implícito
 
+```
+CuentaCorriente cc1 = new CuentaCorriente(22, 33);
+Cuenta cuenta = cc1; //cast implícito
+```
 
+## Método main
 
+A continuación veremos para que sirve la línea:
 
+```
+public static void main (String[] args)
+```
 
+Sirve para poder ingresar comandos via consola. Ejemplo
 
+Si queremos compilar un archivo ```.java``` para bytecode.
 
+```
+javac CodigoEjemplo.java
+```
+
+Si queremos ejecutar con argumentos
+
+```
+java CodigoEjemplo arg1 arg2 arg3 etc
+```
 
 
