@@ -121,3 +121,53 @@ java CodigoEjemplo arg1 arg2 arg3 etc
 ```
 
 
+
+
+
+
+# SuperClase Collection 
+
+![image](https://github.com/AFO10/JAVA/assets/89848233/c9200293-4db4-4a80-91db-f57995857ff8)
+
+![image](https://github.com/AFO10/JAVA/assets/89848233/d0c8c074-6a75-4941-976c-fc4345c5c531)
+
+No puede extender aunque sea una interface de mayor jerarquía, omite métodos necesarios
+
+# Integer
+
+Ya que  ```int``` es un primitivo, es decir que no es clase, por consiguiente, no es considerado un  ```Object```. Y debido a esto, no podemos añadir primitivos a Listas, ya que estas trabajan con referencias y los primitivos trabajan con los valores como tal.
+Entonces se emplean  ```Integer```.
+
+Implementación:
+
+*  ```
+   int numero = 40;
+   Integer numeroObjeto = new Integer(40);
+   ```
+
+## Autoboxing
+
+Autoguardado.
+En java, se refiere a que realiza una inicialización a objeto a un primitivo.
+Hace un mapeo automático.
+
+
+# Wrappers
+
+![image](https://github.com/AFO10/JAVA/assets/89848233/b5b4dbcc-a105-468c-b773-09cab93bdc55)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
